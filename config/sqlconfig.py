@@ -5,7 +5,7 @@ import os
 
 dotenv.load_dotenv()
 pass_w=os.getenv("sql_password")
-dbName="HP"
+dbName="news"
 
 connectionData=f"mysql+pymysql://root:{pass_w}@localhost/{dbName}"
 engine = alch.create_engine(connectionData)
