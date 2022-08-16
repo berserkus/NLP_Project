@@ -8,6 +8,7 @@ import json
 import pymysql
 import sqlalchemy as alch
 from flask import Flask, request, jsonify
+import markdown
 
 #mongo.all_sentences()
 
@@ -15,8 +16,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def greeting ():
-    readme_file = open(“README.md”, “r”)
-    md_template = markdown.markdown(readme_file.read(), extensions = [“fenced_code”])
+    readme_file = open('README.md', 'r')
+    md_template = markdown.markdown(readme_file.read(), extensions = ['fenced_code'])
     return md_template
 
 

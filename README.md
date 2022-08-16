@@ -87,3 +87,7 @@ In order to get current news use the endpoint:
 - domain/cur_news/[source]/[date]
 - example source: business-insider, bbc-news, the-washington-times, time
 - complete list of sources is here: https://newsapi.org/docs/endpoints/sources
+
+## Posting data to the database
+
+We provide the user an option through Python to import the current news into the SQL database. Once the News API is run we store the news into the dataframe and store in the SQL database.
