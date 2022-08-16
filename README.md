@@ -49,7 +49,7 @@ For every news headline the sentiment of it is calculated. It returns between -1
 It is interesting to see that the **overall sentiment of the news is rather negative**. This could be due to the reason that negative news catch more attention. The distribution of the sentiment is below:
 
 <p align="center">
-<img src="https://github.com/berserkus/NLP_Project/blob/main/images/sentiment_histogram.png">
+<img src="https://github.com/berserkus/NLP_Project/blob/main/images/sentiment_hist.png">
 </p>
 
 While a single source of news is not very evenly distributed, the collection of them shows a shame much closer to the bell curve. However they are very much skewed to the negative side.
@@ -66,3 +66,24 @@ I download the S&P 500 index returns from Yahoo Finance and merge it to the head
 <p align="center">
 <img src="https://github.com/berserkus/NLP_Project/blob/main/images/correlation.png">
 </p>
+
+It seems that there is almost no correlation between the sentiment of the news and the market returns.
+
+This means that unfortunately **we cannot use the news sentiment for trading strategy**
+
+## Creating an API
+
+In order to allow our users to interact with the database we built an API on our machine. The instructions on how to use the API are below
+
+**API manual**
+
+The API provides access to historical headlines and their sentiment as well as to the current news via the news API.
+
+In order to get the historical news use the following format:
+- domain/news/[date]
+- replace date with your desired data in format YYYY-MM-DD
+
+In order to get current news use the endpoint:
+- domain/cur_news/[source]/[date]
+- example source: business-insider, bbc-news, the-washington-times, time
+- complete list of sources is here: https://newsapi.org/docs/endpoints/sources

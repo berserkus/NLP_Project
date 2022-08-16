@@ -15,21 +15,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def greeting ():
-    manual="""This is the manual to use my web API <br>
-    <br>
-    The API provides access to historical headlines and their sentiment
-    as well as to the current news via the news API.<br>
-    <br>
-    In order to get the historical news use the following format:<br>
-    - domain/news/[date]<br>
-    - replace date with your desired data in format YYYY-MM-DD<br>
-    <br>
-    <br>
-    In order to get current news use the endpoint:<br>
-    - domain/cur_news/[source]/[date]<br>
-    - example source: business-insider, bbc-news, the-washington-times, time<br>
-    - complete list of sources is here: https://newsapi.org/docs/endpoints/sources"""
-    return manual
+    readme_file = open(“README.md”, “r”)
+    md_template = markdown.markdown(readme_file.read(), extensions = [“fenced_code”])
+    return md_template
+
 
 # GET
 
