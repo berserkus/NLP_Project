@@ -45,3 +45,24 @@ For the remaining 17 columns, I have used the Machine learning algorithm Random 
 Next the sentiment of the news headlines are analyzed. It is done using the SentimentIntensityAnalyzer from NLTK.
 
 For every news headline the sentiment of it is calculated. It returns between -1 and 1 where -1 is really negative and 1 is positive, anything between -0.05 and 0.05 is considered neutral.
+
+It is interesting to see that the **overall sentiment of the news is rather negative**. This could be due to the reason that negative news catch more attention. The distribution of the sentiment is below:
+
+<p align="center">
+<img src="https://github.com/berserkus/NLP_Project/blob/main/images/sentiment_histogram.png">
+</p>
+
+While a single source of news is not very evenly distributed, the collection of them shows a shame much closer to the bell curve. However they are very much skewed to the negative side.
+
+
+### Sentiment analysis as trading strategy?
+
+In order to see if the news sentiment has any predictive power for a potential trading strategy we compare the daily news sentiment with the S&P 500 market returns.
+
+I download the S&P 500 index returns from Yahoo Finance and merge it to the headline database.
+
+**Correlation analysis**
+
+<p align="center">
+<img src="https://github.com/berserkus/NLP_Project/blob/main/images/correlation.png">
+</p>
